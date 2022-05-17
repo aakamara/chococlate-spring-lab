@@ -35,6 +35,9 @@ public class Dataloader implements ApplicationRunner {
         Chocolate choco3 = new Chocolate("Dove", 75, estate2);
         chocolateRepository.save(choco3);
 
+        Chocolate choco4 = new Chocolate("Dove", 40, estate2);
+        chocolateRepository.save(choco4);
+
 
     }
 }
