@@ -23,7 +23,15 @@ public class ChocolateController {
 //    INDEX
     @GetMapping
     public ResponseEntity<List<Chocolate>> getAllChocolatesName(
-            @RequestParam(name = "name") String name){
-        return new ResponseEntity<>(chocolateRepository.findChocolateByName(name), HttpStatus.OK);
+            @RequestParam(required = false, name = "name") String name)
+    {
+        if(name != null){
+            return new ResponseEntity<>(chocolateRepository.findChocolateByName(name), HttpStatus.OK);
+        }
+        return new ResponseEntity<>(chocolateRepository.findAll(), HttpStatus.OK);
     }
+
+//    SHOW
+
+
 }
