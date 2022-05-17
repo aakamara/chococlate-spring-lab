@@ -35,4 +35,11 @@ public class ChocolateController {
         return new ResponseEntity<>(chocolateRepository.findById(id), HttpStatus.OK);
     }
 
+//    POST
+    @PostMapping //localhost:8080/chocolates
+    public ResponseEntity<Chocolate> createChocolate(@RequestBody Chocolate newChocolate){
+        chocolateRepository.save(newChocolate);
+        return new ResponseEntity<>(newChocolate, HttpStatus.CREATED);
+    }
+
 }
